@@ -90,6 +90,8 @@ int main(int argc, char *argv[]) {
 
     pjsuaCommunicator.connect(
             conf.getString("sip.host"),
+            conf.getString("sip.id_user"),
+            conf.getString("sip.virt_user"),
             conf.getString("sip.user"),
             conf.getString("sip.password"),
             conf.getInt("sip.port"));

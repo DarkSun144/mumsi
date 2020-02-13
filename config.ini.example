@@ -1,27 +1,29 @@
 [general]
 # valid values for log level are: ERROR, WARN, NOTICE, INFO, DEBUG
-logLevel = NOTICE
+logLevel = DEBUG
 
 [sip]
 # list of valid SIP URIs for incoming connections separated by space
 # supported wildcards: *
 # if you want to allow calls from any URI, write *@*
-validUriExpression = *@sip.example.com *@127.0.0.1
-host = sip.example.org
+validUriExpression = *@192.168.0.* *@192.168.3.* *@172.31.1.* *@127.0.0.1
+host = 192.168.0.112 
 port = 5060
-user = mumsi
-password = foobar
+virt_user = 10000900
+user = 901
+id_user = 3000
+password = pttGW_01
 
 # length of single voice frame in ms. Valid values are 10, 20, 40, 60 ms.
 # Adjust it if you need to meet the specific bandwidth requirements of Murmur server
 frameLength = 40
 
 [mumble]
-host = example.org
+host = mymuble.arthjco.my.id
 port = 64738
-user = mumsi
-password = foobar
-channelNameExpression =
+user = pttGW01
+password = pttGW_01
+channelNameExpression = pttG01 
 
 # Bitrate of Opus encoder in B/s
 # Adjust it if you need to meet the specific bandwidth requirements of Murmur server

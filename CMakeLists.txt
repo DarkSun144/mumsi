@@ -2,7 +2,8 @@ cmake_minimum_required(VERSION 2.8.1)
 project(mumsi)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
-
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_BUILD_TYPE DEBUG)
 INCLUDE(FindPkgConfig)
 find_package(Boost COMPONENTS system regex REQUIRED)
 find_package(PkgConfig REQUIRED)
@@ -20,6 +21,7 @@ include_directories(../mumlib/include)
 link_directories(../mumlib/build)
 
 set(SOURCE_FILES
+	transport_adapter.c
         PjsuaCommunicator.cpp
         PjsuaCommunicator.hpp
         MumbleCommunicator.cpp
@@ -38,4 +40,3 @@ target_link_libraries(mumsi ${PJSIP_LIBRARIES})
 target_link_libraries(mumsi ${LOG4CPP_LIBRARIES})
 target_link_libraries(mumsi ${Boost_LIBRARIES})
 target_link_libraries(mumsi mumlib)
-
